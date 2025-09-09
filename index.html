@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Search</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Birthstone&family=Bitter:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Libertinus+Keyboard&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Permanent+Marker&family=Protest+Revolution&family=Savate:ital,wght@0,200..900;1,200..900&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Vertical carousel container */
+
+        h1 {
+            font-family: "Permanent Marker", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .carousel {
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            width: 160px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Title stays fixed */
+        .carousel h2 {
+            background: rgba(17, 24, 39, 0.9);
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* Scrolling area */
+        .carousel-scroll {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .carousel-content {
+            display: flex;
+            flex-direction: column;
+            animation: scroll 20s linear infinite;
+        }
+
+        .carousel-content img {
+            width: 140px;
+            margin: 14px auto;
+            border-radius: 12px;
+            opacity: 1.5;
+            /* slight transparency */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            /* deeper floating shadow */
+            transform: translateY(0);
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* Floating hover effect */
+        .carousel-content img:hover {
+            opacity: 1;
+            /* make more visible */
+            transform: translateY(-8px) scale(1.05);
+            /* lift and enlarge slightly */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+        }
+
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white flex flex-col items-center min-h-screen p-6"
+    style="background-image: url('./Images/background.jpg'); background-size: cover; background-position: center;">
+
+
+    <!-- Left Carousel -->
+    <div class="carousel left-0">
+        <h2 class="text-[#70d9ff]">New Releases</h2>
+        <div class="carousel-scroll">
+            <div class="carousel-content">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCWFhipbHINqU6gDKMy5IP_YXwPkzv94bGI5JjhxZ0biFmGDmv"
+                    alt="Movie 1">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtqTbWnnfqKImsTubwdz7sxV3TfhS5o1annCB91dvkdCzSjgmm"
+                    alt="Movie 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4jsc7fsNBYK4939_9EUouARIBeJdIOO1g-6MeDaRMRKThrCx"
+                    alt="Movie 3">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRriL3OlIdx40y2QcqbsRUqTBppx0ethY8UTYLxuxRNiP6WRkMv"
+                    alt="Movie 4">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQtlBjk3X38iyGkPONh7-SHa4TBqBzO5MzSR-n4hzwQEZe8HdR2"
+                    alt="Movie 5">
+
+                <!-- Duplicate for infinite loop -->
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCWFhipbHINqU6gDKMy5IP_YXwPkzv94bGI5JjhxZ0biFmGDmv"
+                    alt="Movie 1">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtqTbWnnfqKImsTubwdz7sxV3TfhS5o1annCB91dvkdCzSjgmm"
+                    alt="Movie 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4jsc7fsNBYK4939_9EUouARIBeJdIOO1g-6MeDaRMRKThrCx"
+                    alt="Movie 3">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRriL3OlIdx40y2QcqbsRUqTBppx0ethY8UTYLxuxRNiP6WRkMv"
+                    alt="Movie 4">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQtlBjk3X38iyGkPONh7-SHa4TBqBzO5MzSR-n4hzwQEZe8HdR2"
+                    alt="Movie 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Carousel -->
+    <div class="carousel right-0">
+        <h2 class="text-[#70d9ff]">New Releases</h2>
+        <div class="carousel-scroll">
+            <div class="carousel-content">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbb7O4vfc9wlqZ_EcHtZk5ZfH_-LiKH6FcYS48EEPABqmaW0pn"
+                    alt="Movie 6">
+                <img src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/how-to-train-your-dragon-intl/images/regions/us/updates2/onesheet.jpg"
+                    alt="Movie 7">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1gbirimxSWuhaHcyVXPjPfISDbu6YDjIT2su8BR9ianN677xw"
+                    alt="Movie 8">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSbW267nnhUSMUvlZtoBK0bcQko6FhjkrPGz_aGbvV70D8NC13"
+                    alt="Movie 9">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQTKzJlbIJf7yJ_L5VNIGU8vOcZzZj2OvAIifB-MgTDcC7QMQuT"
+                    alt="Movie 10">
+
+                <!-- Duplicate for infinite loop -->
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbb7O4vfc9wlqZ_EcHtZk5ZfH_-LiKH6FcYS48EEPABqmaW0pn"
+                    alt="Movie 6">
+                <img src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/how-to-train-your-dragon-intl/images/regions/us/updates2/onesheet.jpg"
+                    alt="Movie 7">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1gbirimxSWuhaHcyVXPjPfISDbu6YDjIT2su8BR9ianN677xw"
+                    alt="Movie 8">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSbW267nnhUSMUvlZtoBK0bcQko6FhjkrPGz_aGbvV70D8NC13"
+                    alt="Movie 9">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQTKzJlbIJf7yJ_L5VNIGU8vOcZzZj2OvAIifB-MgTDcC7QMQuT"
+                    alt="Movie 10">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl font-bold mb-4 text-[#70d9ff]">Movie Archive</h1>
+
+    <!-- Search Bar -->
+    <div class="flex gap-2 mb-6">
+        <input id="movieInput" type="text" placeholder="Enter movie name..." class="px-4 py-2 rounded text-black w-72">
+        <button onclick="getMovie()" class="bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded">Search</button>
+    </div>
+
+    <!-- Movie Card -->
+    <div id="movieCard"
+        class="hidden bg-gray-800/50 p-6 rounded-lg shadow-lg w-96 text-center hover:shadow-2xl backdrop-blur-md">
+        <img id="poster" class="w-48 mx-auto mb-4 rounded shadow" alt="Movie Poster">
+        <h2 id="title" class="text-2xl font-bold"></h2>
+        <p id="year" class="text-gray-100"></p>
+        <p id="genre" class="text-blue-200"></p>
+         <p id="director" class="text-gray-100"></p>
+         <p id="plot" class="text-blue-100"></p>
+        <p id="rating" class="text-yellow-400 font-bold"></p>
+        <!-- <p id="plot" class="mt-2"></p> -->
+    </div>
+
+    <script>
+        async function getMovie() {
+            const movieName = document.getElementById("movieInput").value.trim();
+            const apiKey = "f2b5dd1f"; // your API key
+            const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movieName)}&apikey=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.Response === "True") {
+                    document.getElementById("movieCard").classList.remove("hidden");
+                    document.getElementById("poster").src = data.Poster !== "N/A" ? data.Poster : "https://via.placeholder.com/150";
+                    document.getElementById("title").textContent = data.Title;
+                    document.getElementById("year").textContent = `Year: ${data.Year}`;
+                    document.getElementById("genre").textContent = data.Genre;
+                    document.getElementById("director").textContent = `Director: ${data.Director}`;
+                    document.getElementById("plot").textContent = data.Plot ;
+                    document.getElementById("rating").textContent = `IMDb: ⭐ ${data.imdbRating}/10`;
+                } else {
+                    alert("Movie not found!");
+                }
+            } catch (error) {
+                console.error("Error fetching movie:", error);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
