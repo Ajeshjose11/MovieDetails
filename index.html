@@ -13,7 +13,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Vertical carousel container */
+        
 
         h1 {
             font-family: "Permanent Marker", cursive;
@@ -34,7 +34,7 @@
             align-items: center;
         }
 
-        /* Title stays fixed */
+        
         .carousel h2 {
             background: rgba(17, 24, 39, 0.9);
             width: 100%;
@@ -45,7 +45,7 @@
             z-index: 10;
         }
 
-        /* Scrolling area */
+        
         .carousel-scroll {
             flex: 1;
             overflow: hidden;
@@ -64,19 +64,19 @@
             margin: 14px auto;
             border-radius: 12px;
             opacity: 1.5;
-            /* slight transparency */
+            
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-            /* deeper floating shadow */
+           
             transform: translateY(0);
             transition: all 0.4s ease-in-out;
         }
 
-        /* Floating hover effect */
+        
         .carousel-content img:hover {
             opacity: 1;
-            /* make more visible */
+            
             transform: translateY(-8px) scale(1.05);
-            /* lift and enlarge slightly */
+            
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
         }
 
@@ -113,7 +113,7 @@
                 <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQtlBjk3X38iyGkPONh7-SHa4TBqBzO5MzSR-n4hzwQEZe8HdR2"
                     alt="Movie 5">
 
-                <!-- Duplicate for infinite loop -->
+                
                 <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCWFhipbHINqU6gDKMy5IP_YXwPkzv94bGI5JjhxZ0biFmGDmv"
                     alt="Movie 1">
                 <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtqTbWnnfqKImsTubwdz7sxV3TfhS5o1annCB91dvkdCzSjgmm"
@@ -178,13 +178,13 @@
          <p id="director" class="text-gray-100"></p>
          <p id="plot" class="text-blue-100"></p>
         <p id="rating" class="text-yellow-400 font-bold"></p>
-        <!-- <p id="plot" class="mt-2"></p> -->
+        
     </div>
 
     <script>
         async function getMovie() {
             const movieName = document.getElementById("movieInput").value.trim();
-            const apiKey = "f2b5dd1f"; // your API key
+            const apiKey = "f2b5dd1f"; 
             const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movieName)}&apikey=${apiKey}`;
 
             try {
